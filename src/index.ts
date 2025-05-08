@@ -1,7 +1,4 @@
-function formatString(
-  input: string,
-  toUpper: boolean = true
-): string | undefined {
+function formatString(input: string, toUpper: boolean = true): string | undefined {
   if (toUpper === true) {
     return input.toUpperCase();
   }
@@ -13,9 +10,8 @@ console.log(formatString('Hello')); // HELLO
 console.log(formatString('Hello', true)); // HELLO
 console.log(formatString('Hello', false)); // hello
 
-function filterByRating(
-  items: { title: string; rating: number }[]
-): { title: string; rating: number }[] {
+
+function filterByRating(items: { title: string; rating: number }[]): { title: string; rating: number }[] {
   return items.filter(item => item.rating >= 4);
 }
 
@@ -30,8 +26,10 @@ console.log(filterByRating(books));  // Output: [ { title: "Book A", rating: 4.5
 function concatenateArrays<T>(...arrays: T[][]): T[] {
   return arrays.reduce((acc, cur) => acc.concat(cur), []);
 }
+
 console.log(concatenateArrays(["a", "b"], ["c"])); // [ 'a', 'b', 'c' ]
 console.log(concatenateArrays([1, 2], [3, 4], [5])); // [ 1, 2, 3, 4, 5 ]
+
 
 class Vehicle {
   private make: string;
@@ -99,14 +97,7 @@ enum Day {
 }
 
 function getDayType(day: Day): string {
-  if (
-    day === Day.Monday ||
-    day === Day.Tuesday ||
-    day === Day.Wednesday ||
-    day === Day.Thursday ||
-    day === Day.Friday ||
-    day === Day.Saturday
-  ) {
+  if (day === Day.Monday || day === Day.Tuesday || day === Day.Wednesday || day === Day.Thursday || day === Day.Friday || day === Day.Saturday) {
     return 'Weekday';
   } else {
     return 'Weekend';
